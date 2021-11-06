@@ -50,11 +50,11 @@ install() {
 	wget -q "https://github.com/anoma/anoma/releases/download/${anoma_version}/anoma-${anoma_version}-Linux-x86_64.tar.gz"
 	tar -xvf "anoma-${anoma_version}-Linux-x86_64.tar.gz"
 	chmod +x "$HOME/anoma-${anoma_version}-Linux-x86_64/anoman" "$HOME/anoma-${anoma_version}-Linux-x86_64/anomac" "$HOME/anoma-${anoma_version}-Linux-x86_64/anomaw" "$HOME/anoma-${anoma_version}-Linux-x86_64/anoma"
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoman" /usr/bin/anoman
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomac" /usr/bin/anomac
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomaw" /usr/bin/anomaw
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoma" /usr/bin/anoma
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/wasm" $HOME/wasm
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoman" /usr/bin/anoman
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomac" /usr/bin/anomac
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomaw" /usr/bin/anomaw
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoma" /usr/bin/anoma
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/wasm" $HOME/wasm
 	rm -rf "$HOME/anoma-${anoma_version}-Linux-x86_64" "anoma-${anoma_version}-Linux-x86_64.tar.gz"
 	sed -i -e "s%^moniker *=.*%moniker = \"$anoma_moniker\"%" "$HOME/.anoma/anoma-feigenbaum-0.ebb9e9f9013/tendermint/config/config.toml"
 }
@@ -68,11 +68,11 @@ auto_install() {
 	wget -q "https://github.com/anoma/anoma/releases/download/${anoma_version}/anoma-${anoma_version}-Linux-x86_64.tar.gz"
 	tar -xvf "anoma-${anoma_version}-Linux-x86_64.tar.gz"
 	chmod +x "$HOME/anoma-${anoma_version}-Linux-x86_64/anoman" "$HOME/anoma-${anoma_version}-Linux-x86_64/anomac" "$HOME/anoma-${anoma_version}-Linux-x86_64/anomaw" "$HOME/anoma-${anoma_version}-Linux-x86_64/anoma"
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoman" /usr/bin/anoman
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomac" /usr/bin/anomac
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomaw" /usr/bin/anomaw
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoma" /usr/bin/anoma
-	mv "$HOME/anoma-${anoma_version}-Linux-x86_64/wasm" $HOME/wasm
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoman" /usr/bin/anoman
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomac" /usr/bin/anomac
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomaw" /usr/bin/anomaw
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoma" /usr/bin/anoma
+	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/wasm" $HOME/wasm
 	rm -rf "$HOME/anoma-${anoma_version}-Linux-x86_64" "anoma-${anoma_version}-Linux-x86_64.tar.gz"
 	sed -i -e "s%^moniker *=.*%moniker = \"$anoma_moniker\"%" "$HOME/.anoma/anoma-feigenbaum-0.ebb9e9f9013/tendermint/config/config.toml"
 	anoma client utils join-network --chain-id=anoma-feigenbaum-0.ebb9e9f9013
