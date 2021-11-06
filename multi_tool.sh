@@ -73,7 +73,7 @@ auto_install() {
 	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anomaw" /usr/bin/anomaw
 	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/anoma" /usr/bin/anoma
 	sudo mv "$HOME/anoma-${anoma_version}-Linux-x86_64/wasm" $HOME/wasm
-	rm -rf "$HOME/anoma-${anoma_version}-Linux-x86_64" "anoma-${anoma_version}-Linux-x86_64.tar.gz"
+	sudo rm -rf "$HOME/anoma-${anoma_version}-Linux-x86_64" "anoma-${anoma_version}-Linux-x86_64.tar.gz"
 	sed -i -e "s%^moniker *=.*%moniker = \"$anoma_moniker\"%" "$HOME/.anoma/anoma-feigenbaum-0.ebb9e9f9013/config.toml"
 	anoma client utils join-network --chain-id=anoma-feigenbaum-0.ebb9e9f9013
 	printf "[Unit]
